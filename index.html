@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Código de Ética da Rocinante">
+  <meta name="theme-color" content="#071b33">
+  <title>Código de Ética | Rocinante</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <img class="logo" src="logo-rocinante.png" alt="Logo da Rocinante">
+      <div>
+        <strong>ROCINANTE</strong>
+        <span>Código de Ética</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="introducao">
+      <h1>Código de Ética</h1>
+      <p>
+        Leia o documento integralmente. Ao terminar, marque a declaração de
+        ciência no final desta página.
+      </p>
+    </section>
+
+    <div class="aviso" role="alert">
+      <strong>ATENÇÃO</strong>
+      <p>
+        Não feche, atualize ou saia desta página antes de concluir a leitura e
+        confirmar sua ciência.
+      </p>
+    </div>
+
+    <section class="documento" aria-labelledby="titulo-documento">
+      <div class="barra-documento">
+        <h2 id="titulo-documento">Documento para leitura</h2>
+        <div class="acoes">
+          <a href="codigo-de-etica-rocinante.pdf" target="_blank" rel="noopener">
+            Abrir PDF em outra aba
+          </a>
+          <a href="codigo-de-etica-rocinante.pdf" download>Baixar PDF</a>
+        </div>
+      </div>
+
+      <object
+        class="visualizador"
+        data="codigo-de-etica-rocinante.pdf#view=FitH"
+        type="application/pdf"
+        aria-label="Código de Ética da Rocinante em PDF"
+      >
+        <div class="alternativa-pdf">
+          <p>O PDF não abriu automaticamente neste navegador.</p>
+          <a href="codigo-de-etica-rocinante.pdf" target="_blank" rel="noopener">
+            Clique aqui para abrir o documento
+          </a>
+        </div>
+      </object>
+    </section>
+
+    <section class="confirmacao" aria-labelledby="titulo-confirmacao">
+      <h2 id="titulo-confirmacao">Confirmação de leitura</h2>
+      <p>Marque a opção abaixo somente após terminar a leitura do documento.</p>
+
+      <form id="confirmation-form">
+        <label class="campo-confirmacao">
+          <input id="read-confirmation" type="checkbox" required>
+          <span>
+            Declaro que li integralmente e estou ciente do conteúdo do Código
+            de Ética da Rocinante.
+          </span>
+        </label>
+
+        <button id="confirm-button" type="submit" disabled>Confirmar leitura</button>
+        <p id="form-message" class="mensagem" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <img class="logo logo-rodape" src="logo-rocinante.png" alt="">
+    <p>ROCINANTE</p>
+  </footer>
+</body>
+</html>
