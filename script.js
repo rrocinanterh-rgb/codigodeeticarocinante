@@ -7,6 +7,7 @@
 
   const identificationSection = document.querySelector("#identification-section");
   const identificationForm = document.querySelector("#identification-form");
+  const employeeNameInput = document.querySelector("#employee-name");
   const employeeEmailInput = document.querySelector("#employee-email");
   const startButton = document.querySelector("#start-button");
   const startMessage = document.querySelector("#start-message");
@@ -23,6 +24,7 @@
   let readingConfirmed = false;
   let visibleSeconds = 0;
   let sessionId = "";
+  let employeeName = "";
   let employeeEmail = "";
 
   function createSessionId() {
@@ -43,7 +45,7 @@
     const data = new URLSearchParams({
       evento: eventName,
       sessao: sessionId,
-      nome: "",
+      nome: employeeName,
       identificacao: employeeEmail,
       tempo: String(visibleSeconds),
       versao: DOCUMENT_VERSION
@@ -67,7 +69,7 @@
       "ATENÇÃO!\n\n" +
       "Não feche, atualize ou saia desta página antes de concluir a leitura " +
       "integral do Código de Ética.\n\n" +
-      "Primeiro, informe seu e-mail para iniciar."
+      "Primeiro, informe seu nome e e-mail para iniciar."
     );
   }, 300);
 
@@ -84,6 +86,7 @@
       return;
     }
 
+    employeeName = employeeNameInput.value.trim();
     employeeEmail = employeeEmailInput.value.trim().toLowerCase();
     sessionId = createSessionId();
 
@@ -96,12 +99,13 @@
       await sendRegistration("abertura");
 
       readingStarted = true;
+      employeeNameInput.disabled = true;
       employeeEmailInput.disabled = true;
       identificationSection.hidden = true;
       documentSection.hidden = false;
       confirmationSection.hidden = false;
       employeeSummary.textContent =
-        "Leitura iniciada com o e-mail " + employeeEmail + ".";
+        "Leitura iniciada por " + employeeName + " (" + employeeEmail + ").";
 
       documentSection.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (error) {
@@ -142,8 +146,8 @@
 
       window.alert(
         "LEITURA CONFIRMADA!\n\n" +
-        "Sua confirmação foi registrada! " +
-        "Agora essa página pode ser fechada."
+        "Sua confirmação foi registrada na planilha da empresa. " +
+        "Agora esta página pode ser fechada."
       );
     } catch (error) {
       confirmButton.disabled = false;

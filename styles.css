@@ -129,10 +129,6 @@ body {
   margin: 20px 0;
 }
 
-.campos.campo-unico {
-  grid-template-columns: minmax(0, 560px);
-}
-
 .campos label span {
   display: block;
   margin-bottom: 6px;

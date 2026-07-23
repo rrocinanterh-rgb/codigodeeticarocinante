@@ -25,8 +25,8 @@
     <section class="introducao">
       <h1>Código de Ética</h1>
       <p>
-        Informe seu e-mail para iniciar. Depois, leia o documento integralmente
-        e marque a declaração de ciência no final da página.
+        Informe seu nome e e-mail para iniciar. Depois, leia o documento
+        integralmente e marque a declaração de ciência no final da página.
       </p>
     </section>
 
@@ -46,7 +46,21 @@
       </p>
 
       <form id="identification-form">
-        <div class="campos campo-unico">
+        <div class="campos">
+          <label>
+            <span>Nome completo</span>
+            <input
+              id="employee-name"
+              name="nome"
+              type="text"
+              autocomplete="name"
+              minlength="3"
+              maxlength="150"
+              placeholder="Digite seu nome completo"
+              required
+            >
+          </label>
+
           <label>
             <span>E-mail</span>
             <input
@@ -55,7 +69,7 @@
               type="email"
               autocomplete="email"
               maxlength="150"
-              placeholder="digite seu email"
+              placeholder="nome@empresa.com.br"
               required
             >
           </label>
