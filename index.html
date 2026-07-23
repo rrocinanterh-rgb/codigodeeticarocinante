@@ -25,8 +25,8 @@
     <section class="introducao">
       <h1>Código de Ética</h1>
       <p>
-        Leia o documento integralmente. Ao terminar, marque a declaração de
-        ciência no final desta página.
+        Informe seu e-mail para iniciar. Depois, leia o documento integralmente
+        e marque a declaração de ciência no final da página.
       </p>
     </section>
 
@@ -34,11 +34,39 @@
       <strong>ATENÇÃO</strong>
       <p>
         Não feche, atualize ou saia desta página antes de concluir a leitura e
-        confirmar sua ciência.
+        confirmar sua ciência. Caso tente sair, o navegador poderá mostrar um aviso.
       </p>
     </div>
 
-    <section class="documento" aria-labelledby="titulo-documento">
+    <section id="identification-section" class="identificacao" aria-labelledby="titulo-identificacao">
+      <h2 id="titulo-identificacao">Identificação do colaborador</h2>
+      <p>
+        O início e a conclusão da leitura serão registrados em uma planilha
+        interna da empresa.
+      </p>
+
+      <form id="identification-form">
+        <div class="campos campo-unico">
+          <label>
+            <span>E-mail</span>
+            <input
+              id="employee-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="150"
+              placeholder="nome@empresa.com.br"
+              required
+            >
+          </label>
+        </div>
+
+        <button id="start-button" type="submit">Iniciar leitura</button>
+        <p id="start-message" class="mensagem" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="document-section" class="documento" aria-labelledby="titulo-documento" hidden>
       <div class="barra-documento">
         <h2 id="titulo-documento">Documento para leitura</h2>
         <div class="acoes">
@@ -64,9 +92,10 @@
       </object>
     </section>
 
-    <section class="confirmacao" aria-labelledby="titulo-confirmacao">
+    <section id="confirmation-section" class="confirmacao" aria-labelledby="titulo-confirmacao" hidden>
       <h2 id="titulo-confirmacao">Confirmação de leitura</h2>
-      <p>Marque a opção abaixo somente após terminar a leitura do documento.</p>
+      <p id="employee-summary"></p>
+      <p>Marque a opção abaixo somente depois de terminar a leitura do documento.</p>
 
       <form id="confirmation-form">
         <label class="campo-confirmacao">
