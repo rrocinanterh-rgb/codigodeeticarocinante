@@ -142,8 +142,8 @@
 
       window.alert(
         "LEITURA CONFIRMADA!\n\n" +
-        "Sua confirmação foi registrada na planilha da empresa. " +
-        "Agora esta página pode ser fechada."
+        "Sua confirmação foi registrada! " +
+        "Agora essa página pode ser fechada."
       );
     } catch (error) {
       confirmButton.disabled = false;
